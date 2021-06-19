@@ -13,6 +13,10 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class CalculatorController {
 	
+	int n1=0,n2=0,radio=0,result = 0;
+	String symbol=null;
+	
+	
 	@RequestMapping("/ShowMyLoginPage")
 	public String ShowloginPage() {
 		return "loginPage";
@@ -49,11 +53,17 @@ public class CalculatorController {
 	public ModelAndView ProcessCal(HttpServletRequest req) {
 	
 		ModelAndView mv =new ModelAndView();
-		int result = 0;
-		int radio=0;
-		int n1=Integer.parseInt(req.getParameter("t1"));
-		int n2=Integer.parseInt(req.getParameter("t2"));
-		String symbol=req.getParameter("opt");
+		
+		if(!(req.getParameter("t1").equals(""))){
+			n1=Integer.parseInt(req.getParameter("t1"));
+		}
+		if(!(req.getParameter("t2").equals(""))){
+			n2=Integer.parseInt(req.getParameter("t2"));
+		}
+		if(!(req.getParameter("opt").equals(""))){
+			symbol=req.getParameter("opt");
+		}
+
 		
 		if(symbol.equals("+")){ result=n1+n2;radio=0;}
 		else if(symbol.equals("-")){ result=n1-n2;radio=1;}
