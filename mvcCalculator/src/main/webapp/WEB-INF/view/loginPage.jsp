@@ -13,7 +13,7 @@ div {text-align: center;}
 
 <div>
 <form action="login" method="GET">
-<input type="text" name="t1"
+<input type="text" name="username"
     placeholder="enter your username"/><br><br>
     
 <input type="text" name="password"

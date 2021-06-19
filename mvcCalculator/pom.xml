@@ -62,6 +62,6 @@
     </dependency>  
   </dependencies>
   <build>
-    <finalName>uppercase</finalName>
+    <finalName>mvcCalculator</finalName>
   </build>
 </project>

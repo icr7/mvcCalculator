@@ -22,7 +22,7 @@ public class CalculatorController {
 	@RequestMapping("/login")
 	public ModelAndView ProessLoginPage(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView();
-		String name = request.getParameter("t1");
+		String name = request.getParameter("username");
 		String pass = request.getParameter("password");
 		 if(name.toLowerCase().equals("ishwar")&&pass.equals("icr7")) {
 			
