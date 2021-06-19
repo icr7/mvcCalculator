@@ -21,9 +21,7 @@ button
 <body>
 <div>
 <h2> icr7 Calculator</h2>
-<h4>hi,
-<%=request.getAttribute("username")%> 
-</h4>
+<h4> fill details to calculate </h4>
 <br>
 <form action="processCal" method="GET">
 <input type="text" name="t1"
