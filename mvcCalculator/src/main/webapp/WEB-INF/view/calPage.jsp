@@ -26,10 +26,20 @@ button
 <form action="processCal" method="GET">
 <input type="text" name="t1"
     placeholder="1st number"/><br><br>
- 
-  <input type="text" name="opt"
-    placeholder="symbol"/><br><br>
-    
+
+  <b style="color:DarkMagenta;">+</b><input type="radio" id="+" name="opt" value="+">
+   
+  
+  &emsp;<b style="color:DarkMagenta;">-</b><input type="radio" id="-" name="opt" value="-">
+   
+   
+   &emsp;<b style="color:DarkMagenta;">*</b><input type="radio" id="*" name="opt" value="*">
+
+   
+   &emsp;<b style="color:DarkMagenta;">/</b><input type="radio" id="/" name="opt" value="/">
+
+<br><br>
+  
 <input type="text" name="t2"
     placeholder="2nd number"/><br><br>
    

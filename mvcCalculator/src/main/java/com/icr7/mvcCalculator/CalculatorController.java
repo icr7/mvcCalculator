@@ -50,19 +50,21 @@ public class CalculatorController {
 	
 		ModelAndView mv =new ModelAndView();
 		int result = 0;
+		int radio=0;
 		int n1=Integer.parseInt(req.getParameter("t1"));
 		int n2=Integer.parseInt(req.getParameter("t2"));
 		String symbol=req.getParameter("opt");
 		
-		if(symbol.equals("+")){ result=n1+n2;}
-		else if(symbol.equals("-")){ result=n1-n2;}
-		else if(symbol.equals("*")){ result=n1*n2;}
-		else if(symbol.equals("/")){ result=n1/n2;}
-		
+		if(symbol.equals("+")){ result=n1+n2;radio=0;}
+		else if(symbol.equals("-")){ result=n1-n2;radio=1;}
+		else if(symbol.equals("*")){ result=n1*n2;radio=2;}
+		else if(symbol.equals("/")){ result=n1/n2;radio=3;}
+
 		    
 			 mv.addObject("num1",n1);
 			 mv.addObject("num2",n2);
 			 mv.addObject("opt",symbol);
+			 mv.addObject("symbolNum",radio);
 			 mv.addObject("output",result);
 		     mv.setViewName("resultPage");
 			
