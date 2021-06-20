@@ -23,7 +23,7 @@ button
 <h2> icr7 Calculator</h2>
 <h4> fill details to calculate </h4>
 <br>
-<form action="processCal" method="GET">
+<form action="processCal" name=resultCal method="GET">
 <input type="text" name="t1"
     placeholder="1st number"/><br><br>
 
@@ -47,6 +47,8 @@ button
 <input type="submit" value="calculate" placeholder ="="/>
 
 </form>
-
+<script >
+document.resultCal.opt[Math.floor(Math.random()*4)].checked=true;
+</script>
 </body>
 </html>
