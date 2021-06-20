@@ -13,9 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class CalculatorController {
 	DecimalChecker myNumber = new DecimalChecker();
-	int n1, n2, radio, result1;
+	int n1=0, n2=0, radio, result1;
 	String status1, status2, symbol;
-	double d1, d2, result2;
+	double d1=0, d2=0, result2;
 	boolean quotientIsDouble;
 
 	@RequestMapping("/ShowMyLoginPage")
@@ -51,6 +51,26 @@ public class CalculatorController {
 			@RequestParam("opt") String symbol) {
 
 		ModelAndView mv = new ModelAndView();
+try {		  
+		if (!s1.equals("")) {
+		    try {
+		        double d = Double.parseDouble(s1);
+		    } catch (NumberFormatException nfe) {
+		        mv.setViewName("calPage");
+		        return mv;
+		    }
+		}
+		
+		if (!s2.equals("")) {
+		    try {
+		        double d = Double.parseDouble(s2);
+		    } catch (NumberFormatException nfe) {
+		        mv.setViewName("calPage");
+		        return mv;
+		    }
+		}
+		
+		
 
 		if (!s1.equals("")) {
 			Boolean check = myNumber.isInteger(s1);
@@ -191,4 +211,10 @@ public class CalculatorController {
 
 		return mv;
 	}
+
+	catch (Exception e) {
+        mv.setViewName("calPage");
+        return mv;
+    }
+}
 }
